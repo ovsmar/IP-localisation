@@ -1,5 +1,5 @@
 window.onload = function() {
-    document.getElementById("myBtn").onclick = function fun() {
+    document.getElementById("myBtn2").onclick = function fun() {
         fetch('https://ipapi.co/json/')
         .then(function(response) {
           response.json().then(jsonData => {
@@ -18,7 +18,7 @@ window.onload = function() {
             document.getElementById("org").innerHTML = "Org:" + " " + jsonData.org
         
         
-        var map = L.map("map").setView([jsonData.latitude, jsonData.longitude], 8);
+        var map = L.map("map").setView([jsonData.latitude, jsonData.longitude], 12);
         
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -32,7 +32,7 @@ window.onload = function() {
           .openOn(map);
         
         function onMapClick(e) {
-          alert("You clicked the map at " + e.latlng);
+          alert("Vous avez cliqué sur la carte à " + e.latlng);
         }
         
         map.on("click", onMapClick);
@@ -42,7 +42,7 @@ window.onload = function() {
         function onMapClick(e) {
           popup
             .setLatLng(e.latlng)
-            .setContent("You clicked the map at " + e.latlng.toString())
+            .setContent("Vous avez cliqué sur la carte à " + e.latlng.toString())
             .openOn(map);
         }
         
