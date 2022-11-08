@@ -1,5 +1,6 @@
-window.onload = function() {
-    document.getElementById("myBtn2").onclick = function fun() {
+// window.onload = function() {
+//     document.getElementById("myBtn2").onclick = function fun() {
+    
         fetch('https://ipapi.co/json/')
         .then(function(response) {
           response.json().then(jsonData => {
@@ -12,7 +13,7 @@ window.onload = function() {
             document.getElementById("region").innerHTML = "Region:" + " " + jsonData.region
             document.getElementById("postal").innerHTML = "Postal Code:" + " " + jsonData.postal
             document.getElementById("latitude_longitude").innerHTML = "Latitude/Longitude" + " " + jsonData.latitude + " , " + jsonData.longitude
-            document.getElementById("timezone").innerHTML = "Time Zone:" + " " + jsonData.timezone
+            document.getElementById("timezone").innerHTML = "Time Zone:" + " " + jsonData.timezone + " (" + jsonData.utc_offset +  ")"
             document.getElementById("country_calling_code").innerHTML = "Calling Code:" + " " + jsonData.country_calling_code
             document.getElementById("currency").innerHTML = "Currency:" + " " + jsonData.currency
             document.getElementById("org").innerHTML = "Org:" + " " + jsonData.org
@@ -55,5 +56,5 @@ window.onload = function() {
         .catch(function(error) {
           console.log(error)
         });
-    }   
- }
+//     }   
+//  }
