@@ -4,16 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet/less" type="text/css" href="src/styles.less" />
     <title>Document</title>
 </head>
 <body>
 
-    <div id="ip">IP Address should show here.</div>
+    <!-- <div id="ip">IP Address should show here.</div>
     <div id="country">country should show here.</div>
-    <div id="city">country should show here.</div>
+    <div id="city">country should show here.</div> -->
 
 
+    <a id="myBtn" class="fixed-button wobble" href="#openModal">
+        <p class="modalaboutme">click</p>
+    </a>
+        
+    <div id="openModal" class="modalbg">
+        <div class="dialog">
+            <a href="#close" title="Close" class="close">X</a>
+            <h2></h2>
+            <p style="text-align: center;">IP</p>
+           
+            <div id="ip">IP Address should show here.</div>
+            <div id="country">country should show here.</div>
+            <div id="city">country should show here.</div>
+            
 
+        </div>
+    </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/less" ></script>
 <script src="src/ip.js"></script>  
 </body>
 </html>
