@@ -1,6 +1,4 @@
-// window.onload = function() {
-//     document.getElementById("myBtn2").onclick = function fun() {
-    
+
         fetch('https://ipapi.co/json/')
         .then(function(response) {
           response.json().then(jsonData => {
@@ -49,12 +47,8 @@
         
         map.on("click", onMapClick);
         
-        
-        
           });
         })
         .catch(function(error) {
           console.log(error)
         });
-//     }   
-//  }
