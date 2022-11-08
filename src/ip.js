@@ -24,11 +24,11 @@ window.onload = function() {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
         
-        L.marker([jsonData.latitude,jsonData.longitude]).addTo(map).bindPopup("Peut-être êtes-vous ici.").openPopup();
+        L.marker([jsonData.latitude,jsonData.longitude]).addTo(map).bindPopup("Peut-être vous êtes ici :0").openPopup();
         
         var popup = L.popup()
           .setLatLng([jsonData.latitude, jsonData.longitude])
-          .setContent("peut-être êtes-vous ici.")
+          .setContent("Peut-être vous êtes ici :0")
           .openOn(map);
         
         function onMapClick(e) {
