@@ -23,15 +23,15 @@
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
         
-        L.marker([jsonData.latitude,jsonData.longitude]).addTo(map).bindPopup("Peut-être vous êtes ici :0").openPopup();
+        L.marker([jsonData.latitude,jsonData.longitude]).addTo(map).bindPopup("Maybe you are here :0").openPopup();
         
         var popup = L.popup()
           .setLatLng([jsonData.latitude, jsonData.longitude])
-          .setContent("Peut-être vous êtes ici :0")
+          .setContent("Maybe you are here :0")
           .openOn(map);
         
         function onMapClick(e) {
-          alert("Vous avez cliqué sur la carte à " + e.latlng);
+          alert("You clicked on the map to " + e.latlng);
         }
         
         map.on("click", onMapClick);
@@ -41,7 +41,7 @@
         function onMapClick(e) {
           popup
             .setLatLng(e.latlng)
-            .setContent("Vous avez cliqué sur la carte à " + e.latlng.toString())
+            .setContent("You clicked on the map to " + e.latlng.toString())
             .openOn(map);
         }
         
@@ -52,3 +52,26 @@
         .catch(function(error) {
           console.log(error)
         });
+
+
+
+        function togglePopup(){
+          document.getElementById("popup-1").classList.toggle("active");
+        }
+      
+      
+      window.setTimeout(function(){ 
+        if (window.localStorage) {
+          var nextPopup = localStorage.getItem( 'nextNewsletter' );
+          console.log(nextPopup)
+          if (nextPopup > new Date()) {
+            return;
+          }
+          var expires = new Date();
+          expires = expires.setHours(expires.getHours() + 24);
+          localStorage.setItem( 'nextNewsletter', expires );
+        }
+        document.getElementById("popup-1").classList.toggle("active");
+      }, 1000);
+      
+      

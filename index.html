@@ -12,11 +12,22 @@
     <title>IP-localisation</title>
 </head>
 <body>
+
+    <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content">
+          <div class="close-btn" onclick="togglePopup()">&times;</div>
+          <p>Hello! This is a simple app for IP address geolocation on <a href="https://leafletjs.com/">Leaflet</a> maps, using API of <a href="https://ipapi.co/">ipapi.co</a>. To locate just click on the 	
+            &#127758; ฅ^•ﻌ•^ฅ </p>
+        </div>
+      </div>
+      
+
     <div id="layout" class="stars">
 
-    <a id="myBtn2" class="fixed-button wobble" href="#IP">
-        <div id="earth"></div>
-    </a>
+        <a id="myBtn2" class="fixed-button wobble" href="#IP">
+            <div id="earth"></div>
+        </a>
         
     <div id="IP" class="modalbg2">
         <div class="dialog2">
@@ -37,7 +48,6 @@
             
             <div id="map"></div>
             
-
         </div>
     </div>
 </div>

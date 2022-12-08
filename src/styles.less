@@ -59,11 +59,6 @@ html, body {
   -webkit-box-shadow: @dims @color; // Safari/Chrome/WebKit
 }
 
-// body {
-//   width: 100%;
-//   background: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/grid.png)
-//     repeat #fefefe;
-// }
 
 .modalbg2 {
   position: fixed;
@@ -131,10 +126,7 @@ html, body {
   font-size: 10px;
   color: #646;
 }
-a {
-  color: #333;
-  text-decoration: none !important;
-}
+
 
 .dialog2{
   line-height: 1.5em;
@@ -156,7 +148,10 @@ a {
     .modalbg2:target .dialog2{
         top: 100px;
     } 
-    
+    .popup .content{
+      width: 333px !important;
+      height: 135px !important;
+    }
 }
 
 
@@ -165,8 +160,7 @@ a {
    width: 200px;
    height: 200px;
    transform-style: preserve-3d;
-   /* a black shadow from left and white from right */
-   box-shadow: inset 16px 0 40px 3px rgb(0 0 0 / 90%), inset -3px 0 5px 2px rgb(255 255 255 / 16%),0px 0px 14px -2px #f0df1759;
+   box-shadow: inset 16px 0 40px 3px rgb(0 0 0 / 90%), inset -3px 0 5px 2px rgb(255 255 255 / 16%),0px 0px 14px -2px #ffffff59;
    background-size: cover;
    margin: 0;
    position: absolute;
@@ -181,7 +175,6 @@ a {
  filter: brightness(0.5);
  }
  
-
 
  @keyframes rotate {
   0% {
@@ -208,7 +201,61 @@ a {
   transform-style: preserve-3d;
 }
  
-//  box-shadow: inset 16px 0 40px 3px rgba(0,0,0,0.9),
-//     inset -3px 0 5px 2px rgba(255,255,255,0.16);
 
+.popup .overlay {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  pointer-events: auto;
+  background: rgba(0, 0, 0, 0.8);
+  z-index:1;
+  display:none;
+}
 
+.popup .content {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  background: rgb(255 255 255 / 8%) ;
+  color: white ;
+  width:500px;
+  height: 108px;
+  z-index:2;
+  text-align:center;
+  padding:20px;
+  box-sizing:border-box;
+  font-family:"Open Sans",sans-serif;
+}
+
+.popup .close-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  width: 20px;
+  height: 20px;
+  background: #222;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.popup.active .overlay {
+  display:block;
+}
+
+.popup.active .content {
+  transition:all 300ms ease-in-out;
+  transform:translate(-50%,-50%) scale(1);
+}
+
+a {
+  color: #f7a6a6;
+  text-decoration: none !important;
+}
